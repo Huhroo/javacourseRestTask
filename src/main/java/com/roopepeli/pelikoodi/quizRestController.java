@@ -65,7 +65,7 @@ public class quizRestController {
     public List<quizquestion> getQuizQuestions() {
         return quizService.getQuizQuestions();
     }
-    //this mapping is used to submit the
+    //this mapping is used to submit the the answer to the quiz questions as JSON body info and it returns the points rewarded for each question that was answered correctly. Answers are case sensitive and must be provided in order of the questions.
     @PostMapping("/submit")
     public String submitQuiz(@RequestBody List<String> userAnswers) {
         int score = quizService.calculateScore(userAnswers);
